@@ -3,10 +3,8 @@
 ###############################################
 
 
-
 name: GitHub's Super Linter
 on: push
-
 
 
 jobs:
@@ -15,13 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
 
-
     steps:
       - name: Check out Git repository
         uses: actions/checkout@master
 
         
-
       - name: Run GitHub Super Linter
         uses: github/super-linter@main
 
@@ -31,4 +27,4 @@ jobs:
           VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_PYTHON_FLAKE8: false
           DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
